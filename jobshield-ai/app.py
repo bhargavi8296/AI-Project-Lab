@@ -9,16 +9,13 @@ st.set_page_config(
     layout="centered"
 )
 
+BASE_DIR = Path(__file__).resolve().parent
+
 
 @st.cache_resource
 def load_files():
-    model = joblib.load(
-        "fake_job_detector.pkl"
-    )
-
-    vectorizer = joblib.load(
-        "tfidf_vectorizer.pkl"
-    )
+    model = joblib.load(BASE_DIR / "fake_job_detector.pkl")
+    vectorizer = joblib.load(BASE_DIR / "tfidf_vectorizer.pkl")
 
     return model, vectorizer
 
