@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
-
+import pathlib as Path
 
 # --------------------------------------------------
 # Page configuration
@@ -17,10 +17,14 @@ st.set_page_config(
 # --------------------------------------------------
 # Load saved model and preprocessor
 # --------------------------------------------------
+BASE_DIR = Path(__file__).resolve().parent
+
+
 @st.cache_resource
 def load_files():
-    model = joblib.load("insurance_model.pkl")
-    preprocessor = joblib.load("preprocessor.pkl")
+    model = joblib.load(BASE_DIR / "fake_job_detector.pkl")
+    preprocessor = joblib.load(BASE_DIR / "preprocessor.pkl")
+
     return model, preprocessor
 
 
