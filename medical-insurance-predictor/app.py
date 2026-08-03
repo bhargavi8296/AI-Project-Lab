@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 @st.cache_resource
 def load_files():
-    model = joblib.load(BASE_DIR / "fake_job_detector.pkl")
+    model = joblib.load(BASE_DIR / "insurance_model.pkl")
     preprocessor = joblib.load(BASE_DIR / "preprocessor.pkl")
 
     return model, preprocessor
