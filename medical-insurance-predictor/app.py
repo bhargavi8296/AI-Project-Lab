@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
-import pathlib as Path
+from pathlib import Path
 
 # --------------------------------------------------
 # Page configuration
