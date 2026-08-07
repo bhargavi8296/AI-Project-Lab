@@ -15,7 +15,7 @@ st.set_page_config(
 @st.cache_resource
 def load_model():
     bundle = joblib.load(
-        "BASE_DIR /customer_segmentation_model.pkl"
+        "BASE_DIR/customer_segmentation_model.pkl"
     )
     return bundle
 
