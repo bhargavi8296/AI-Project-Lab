@@ -16,10 +16,6 @@ A machine learning project that groups customers based on their purchasing behav
 
 ![Customer Segment Prediction](images/prediction-result.png)
 
-### Cluster Visualization
-
-![Customer Clusters](images/cluster-visualization.png)
-
 ## Project Overview
 
 The project analyses customers using the following RFM features:
