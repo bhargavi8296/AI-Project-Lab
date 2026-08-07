@@ -3,19 +3,20 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+from pathlib import Path
 
-
+BASE_DIR = Path(__file__).resolve().parent
 st.set_page_config(
     page_title="Customer Segmentation",
     page_icon="👥",
     layout="centered"
 )
 
-
+model, vectorizer = load_files()
 @st.cache_resource
 def load_model():
     bundle = joblib.load(
-        "customer_segmentation_model.pkl"
+        "BASE_DIR /customer_segmentation_model.pkl"
     )
     return bundle
 
