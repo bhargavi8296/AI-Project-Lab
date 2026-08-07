@@ -12,7 +12,6 @@ st.set_page_config(
     layout="centered"
 )
 
-model, vectorizer = load_files()
 @st.cache_resource
 def load_model():
     bundle = joblib.load(
