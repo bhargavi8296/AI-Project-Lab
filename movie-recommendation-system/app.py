@@ -7,7 +7,7 @@ from pathlib import Path
 # --------------------------------------------------
 # Page configuration
 # --------------------------------------------------
-BASE_DIR=Path(__file__).resolve().parent()
+BASE_DIR=Path(__file__).resolve().parent
 st.set_page_config(
     page_title="Movie Recommendation System",
     page_icon="🎬",
