@@ -22,3 +22,5 @@ env/
 # Operating system files
 .DS_Store
 Thumbs.db
+
+transaction-anomaly-detector/creditcard.csv
