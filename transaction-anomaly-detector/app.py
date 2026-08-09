@@ -2,8 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+from pathlib import Path
 
-
+BASE_DIR=Path(__file__).resolve().parent
 # Page configuration
 st.set_page_config(
     page_title="Transaction Anomaly Detector",
@@ -123,7 +124,7 @@ if uploaded_file is not None:
     try:
 
         artifact = joblib.load(
-            "transaction_anomaly_detector.pkl"
+            BASE_DIR/"transaction_anomaly_detector.pkl"
         )
 
         model = artifact["model"]
