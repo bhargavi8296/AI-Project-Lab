@@ -1,11 +1,13 @@
 import joblib
 import streamlit as st
 from sklearn.metrics.pairwise import cosine_similarity
+from pathlib import Path
 
 
 # --------------------------------------------------
 # Page configuration
 # --------------------------------------------------
+BASE_DIR=Path(__file__).resolve().parent()
 st.set_page_config(
     page_title="Movie Recommendation System",
     page_icon="🎬",
@@ -18,8 +20,8 @@ st.set_page_config(
 # --------------------------------------------------
 @st.cache_resource
 def load_artifacts():
-    loaded_movies = joblib.load("movies.pkl")
-    loaded_vectors = joblib.load("tfidf_vectors.pkl")
+    loaded_movies = joblib.load(BASE_DIR/"movies.pkl")
+    loaded_vectors = joblib.load(BASE_DIR/"tfidf_vectors.pkl")
 
     # DataFrame positions ko vectors ke saath align rakhega
     loaded_movies = loaded_movies.reset_index(drop=True)
